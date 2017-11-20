@@ -77,11 +77,15 @@ public class ObstaclesPooling : MonoBehaviour {
 
 	TipoOBjeto whatIsNext () 
 	{
-		int index = Random.Range (0, 3);
-		if (index == 0) 
+		//50% de ser barril
+		//35% de ser obstaculo voador
+		//15% de ser item
+
+		int index = Random.Range (0, 101);
+		if (index < 50) 
 			return TipoOBjeto.Obstaculo;
 
-		if (index == 1) 
+		if (index >= 50 && index < 85) 
 			return TipoOBjeto.InimigoAr;
 		
 		return TipoOBjeto.Item;
