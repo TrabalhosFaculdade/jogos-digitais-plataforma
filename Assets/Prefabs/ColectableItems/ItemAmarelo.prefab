@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212885009667974984}
   - component: {fileID: 50754079997014786}
   - component: {fileID: 61555505143761878}
-  - component: {fileID: 114495353065858708}
+  - component: {fileID: 114065969565973974}
   m_Layer: 0
   m_Name: ItemAmarelo
   m_TagString: Item
@@ -38,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 1092064753053408}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.30999994, y: -3.49, z: -3}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -88,7 +88,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3, y: 0.3}
   m_EdgeRadius: 0
---- !u!114 &114495353065858708
+--- !u!114 &114065969565973974
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -96,9 +96,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1092064753053408}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca5189d8508b8124bab7797c2b45e28d, type: 3}
+  m_Script: {fileID: 11500000, guid: e4504d7b14318cb448f9ae5649401223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rangeFromGameController: 6
 --- !u!212 &212885009667974984
 SpriteRenderer:
   m_ObjectHideFlags: 1

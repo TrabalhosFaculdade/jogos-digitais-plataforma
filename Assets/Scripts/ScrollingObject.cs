@@ -12,13 +12,14 @@ public class ScrollingObject : MonoBehaviour {
 		rb.velocity = new Vector2 (getScrollingSpeed(), 0);
 	}
 
-	void OnTriggerEnter2D (Collider2D other)
+	void Update ()
 	{
-		Destroy (this.gameObject);
+		if (GameController.instance.gameOver)
+			rb.velocity = Vector2.zero;
 	}
 
 	protected virtual float getScrollingSpeed () 
-	{
+	{		
 		return GameController.instance.scrollSpeed; 
 	}
 }

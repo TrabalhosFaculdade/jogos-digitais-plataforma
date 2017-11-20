@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212397817279402976}
   - component: {fileID: 50444685015787270}
   - component: {fileID: 61657241019731260}
-  - component: {fileID: 114381944929573792}
+  - component: {fileID: 114323974571168466}
   m_Layer: 0
   m_Name: Segundo
   m_TagString: Obstacle
@@ -38,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 1881330605446582}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.86, y: 2.07, z: -3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -88,7 +88,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.4}
   m_EdgeRadius: 0
---- !u!114 &114381944929573792
+--- !u!114 &114323974571168466
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -96,9 +96,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1881330605446582}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca5189d8508b8124bab7797c2b45e28d, type: 3}
+  m_Script: {fileID: 11500000, guid: e4504d7b14318cb448f9ae5649401223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rangeFromGameController: 4
 --- !u!212 &212397817279402976
 SpriteRenderer:
   m_ObjectHideFlags: 1

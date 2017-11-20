@@ -43,7 +43,7 @@ public class ObstaclesPooling : MonoBehaviour {
 	void Update () 
 	{
 		timeSinceLastSpawned += Time.deltaTime;
-		if (timeSinceLastSpawned >= timeForNextSpawn) 
+		if (GameController.instance.gameOver == false && timeSinceLastSpawned >= timeForNextSpawn) 
 		{
 			//decide tipo de objeto a ser spawnado
 			TipoOBjeto proximo = whatIsNext();
@@ -167,7 +167,4 @@ public class ObstaclesPooling : MonoBehaviour {
 	}
 
 
-
-
-	
 }

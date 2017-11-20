@@ -22,10 +22,10 @@ GameObject:
   - component: {fileID: 212412863828283852}
   - component: {fileID: 50066628311503074}
   - component: {fileID: 61401416619592482}
-  - component: {fileID: 114439103746260542}
+  - component: {fileID: 114568792742109972}
   m_Layer: 0
   m_Name: Azul
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88,7 +88,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114439103746260542
+--- !u!114 &114568792742109972
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -96,9 +96,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1927167773101642}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca5189d8508b8124bab7797c2b45e28d, type: 3}
+  m_Script: {fileID: 11500000, guid: e4504d7b14318cb448f9ae5649401223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rangeFromGameController: 1
 --- !u!212 &212412863828283852
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -14,6 +14,9 @@ public class GameController : MonoBehaviour {
 	public float currentTime = 0f;
 	public float speedLimit = -15f;
 
+	public Texture scoreText;
+	private int score = 0;
+
 	void Awake()
 	{
 		if (instance == null)
@@ -46,5 +49,13 @@ public class GameController : MonoBehaviour {
 	public void PlayerDied()
 	{
 		gameOver = true;
+		scrollSpeed = 0f;
+	}
+
+	public void AddToScore(int value)
+	{
+		if (!gameOver)
+			score += value;
+			//TODO update label
 	}
 }
