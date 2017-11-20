@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
@@ -11,10 +12,14 @@ public class GameController : MonoBehaviour {
 	public float scrollSpeed = -4f;
 	public float speedIncrease = -0.5f;
 	public float periodTime = 0.5f;
-	public float currentTime = 0f;
 	public float speedLimit = -15f;
 
-	public Texture scoreText;
+	private float currentTime = 0f;
+
+	private int currentScoreCounter = 0;
+	private int limitScoreCounter = 10;
+
+	public Text scoreText;
 	private int score = 0;
 
 	void Awake()
@@ -27,7 +32,9 @@ public class GameController : MonoBehaviour {
 
 	void Update()
 	{
-		AddTime (Time.deltaTime);
+		float timePassed = Time.deltaTime;
+		AddTime (timePassed);
+		CountTimePassing ();
 
 		//fim de jogo e alguma tecla pressioanda
 		//resetando cena
@@ -48,14 +55,25 @@ public class GameController : MonoBehaviour {
 
 	public void PlayerDied()
 	{
+		print ("Player Died");
 		gameOver = true;
 		scrollSpeed = 0f;
 	}
 
 	public void AddToScore(int value)
 	{
-		if (!gameOver)
+		if (!gameOver) {
 			score += value;
-			//TODO update label
+			scoreText.text = score.ToString();
+		}
+	}
+
+	private void CountTimePassing()
+	{
+		currentScoreCounter++;
+		if (currentScoreCounter >= limitScoreCounter) {
+			currentScoreCounter = 0;
+			AddToScore (1);
+		}
 	}
 }

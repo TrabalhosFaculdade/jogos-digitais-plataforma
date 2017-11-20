@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 50555633891135116}
   - component: {fileID: 61602574335562390}
   - component: {fileID: 114853903160798722}
+  - component: {fileID: 114446848773983470}
   m_Layer: 0
   m_Name: Amarelo
   m_TagString: Obstacle
@@ -88,6 +89,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114446848773983470
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1843655657578374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8417c2166b9aab64aaa494b62976fb18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114853903160798722
 MonoBehaviour:
   m_ObjectHideFlags: 1

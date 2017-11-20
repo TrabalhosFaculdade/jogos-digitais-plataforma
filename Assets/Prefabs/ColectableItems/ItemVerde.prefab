@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 50526466532829852}
   - component: {fileID: 61090944684425846}
   - component: {fileID: 114504086663810200}
+  - component: {fileID: 114414114137055292}
   m_Layer: 0
   m_Name: ItemVerde
   m_TagString: Item
@@ -88,6 +89,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3, y: 0.3}
   m_EdgeRadius: 0
+--- !u!114 &114414114137055292
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1985271543678244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 996913f1ceb9d034294c6a8ef8e24477, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreWhenCollected: 100
 --- !u!114 &114504086663810200
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 50840666321346874}
   - component: {fileID: 61628852619466060}
   - component: {fileID: 114582116367496472}
+  - component: {fileID: 114959571448440938}
   m_Layer: 0
   m_Name: Quarto
   m_TagString: Obstacle
@@ -100,6 +101,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rangeFromGameController: 4
+--- !u!114 &114959571448440938
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1250037718890088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8417c2166b9aab64aaa494b62976fb18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212418073507749056
 SpriteRenderer:
   m_ObjectHideFlags: 1
