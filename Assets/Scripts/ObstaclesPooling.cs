@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObstaclesPooling : MonoBehaviour {
 
-	public int columnPoolSize = 5;
+	public int columnPoolSize = 7;
 	public GameObject[] columnPrefab;
 	public float spawnRateMax = 5f;
 	public float spawnRateMin = 1.5f;
@@ -21,10 +21,8 @@ public class ObstaclesPooling : MonoBehaviour {
 	{
 		columns = new GameObject[columnPoolSize];
 		for (int i = 0; i < columnPoolSize; i++) 
-		{
-			int indexPrefab = Random.Range (0, columnPrefab.Length - 1);
-			columns [i] = (GameObject)Instantiate(columnPrefab[indexPrefab], objectPoolPosition, Quaternion.identity);
-		}
+			columns [i] = (GameObject)Instantiate(columnPrefab[i], objectPoolPosition, Quaternion.identity);
+		
 
 	}
 
