@@ -34,7 +34,7 @@ public class ObstaclesPooling : MonoBehaviour {
 
 	private float timeSinceLastSpawned;
 	private float spawnX = 10f;
-	private float spawnYBarriel = -3.7f;
+	private float spawnYBarriel = -3.93f;
 	private float timeForNextSpawn;
 
 	//tipo de coisas que podem ser criadas

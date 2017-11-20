@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 47334bc53bc2816468e92cdf04e2dda8
-timeCreated: 1511209452
+guid: 4b9684f299ccba34fa0f9b3f6bad0427
+timeCreated: 1511212473
 licenseType: Free
 TrueTypeFontImporter:
   externalObjects: {}
@@ -10,9 +10,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Game_Time
+  fontName: GROBOLD
   fontNames:
-  - Game_Time
+  - GROBOLD
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
