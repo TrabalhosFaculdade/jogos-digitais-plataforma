@@ -14,6 +14,15 @@ public class ObstaclesPooling : MonoBehaviour {
 	public float minYItem = -3.5f;
 	public float maxYItem = 2f;
 
+	public int maxNumberBarriels = 4;
+	public int maxNumberFlyingEnemies = 2;
+	public int maxNumberItems = 1;
+
+	private int currentNumberBarriels = 0;
+	private int currentNumberFlyingEnemies = 0;
+	private int currentNumberItems = 0;
+
+
 	//prefab de coisas a serem spawnadas
 	public GameObject[] barrielsPrefab;
 	public GameObject[] airEnemiesPrefab;
@@ -77,18 +86,88 @@ public class ObstaclesPooling : MonoBehaviour {
 
 	TipoOBjeto whatIsNext () 
 	{
-		//50% de ser barril
-		//35% de ser obstaculo voador
-		//15% de ser item
+		int index = Random.Range(0,101);
 
-		int index = Random.Range (0, 101);
-		if (index < 50) 
-			return TipoOBjeto.Obstaculo;
+		//se todos puderem ser usados
+		if (currentNumberBarriels < maxNumberBarriels &&
+		    currentNumberFlyingEnemies < maxNumberFlyingEnemies &&
+		    currentNumberItems < maxNumberItems) 
+		{
+			//50% de ser barril
+			//30% de ser obstaculo voador
+			//20% de ser item
+			if (index < 50) 
+				return TipoOBjeto.Obstaculo;
 
-		if (index >= 50 && index < 85) 
-			return TipoOBjeto.InimigoAr;
-		
+			if (index >= 50 && index < 80) 
+				return TipoOBjeto.InimigoAr;
+
+			return TipoOBjeto.Item;
+		}
+
+		//se nao puder ser barril
+		if (currentNumberBarriels >= maxNumberBarriels) 
+		{
+			//inimigo voador: 60
+			//item: 40
+			if (index < 60)
+				return getInimigoVoadorComoResultado ();
+			else
+				return getItemComoResultado ();
+		}
+
+		//se nao puder ser inimigo voador
+		if (currentNumberFlyingEnemies >= maxNumberFlyingEnemies) 
+		{
+			//barril: 70
+			//item: 30
+			if (index < 70)
+				return getBarrilComoResultado ();
+			else
+				return getItemComoResultado ();
+		}
+
+		//se nao puder ser item
+		if (currentNumberItems >= maxNumberItems) 
+		{
+			//barril: 65
+			//inimigo voador: 35
+			if (index < 65)
+				return getBarrilComoResultado ();
+			else
+				return getInimigoVoadorComoResultado ();
+		}
+
+		throw new System.AccessViolationException ("Código não encontrado. Algo de errado com a lógica");
+
+	}
+
+	private TipoOBjeto getBarrilComoResultado ()
+	{
+		currentNumberBarriels++;
+		currentNumberFlyingEnemies = 0;
+		currentNumberItems = 0;
+		return TipoOBjeto.Obstaculo;
+	}
+
+	private TipoOBjeto getInimigoVoadorComoResultado ()
+	{
+		currentNumberBarriels = 0;
+		currentNumberFlyingEnemies++;
+		currentNumberItems = 0;
+		return TipoOBjeto.InimigoAr;
+	}
+
+	private TipoOBjeto getItemComoResultado ()
+	{
+		currentNumberBarriels = 0;
+		currentNumberFlyingEnemies = 0;
+		currentNumberItems++;
 		return TipoOBjeto.Item;
 	}
+
+
+
+
 	
 }
