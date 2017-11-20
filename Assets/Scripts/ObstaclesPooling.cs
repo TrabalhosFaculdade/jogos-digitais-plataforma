@@ -11,6 +11,9 @@ public class ObstaclesPooling : MonoBehaviour {
 	public float minYAirEnemy = -2f;
 	public float maxYAirEnemy = 2f;
 
+	public float minYItem = -3.5f;
+	public float maxYItem = 2f;
+
 	//prefab de coisas a serem spawnadas
 	public GameObject[] barrielsPrefab;
 	public GameObject[] airEnemiesPrefab;
@@ -37,21 +40,27 @@ public class ObstaclesPooling : MonoBehaviour {
 			TipoOBjeto proximo = whatIsNext();
 			if (proximo == TipoOBjeto.Obstaculo) {
 
-				int whatPosition = Random.Range (0, barrielsPrefab.Length - 1);
+				int whatIndex = Random.Range (0, barrielsPrefab.Length);
 
 				Vector2 position = new Vector2 (spawnX, spawnYBarriel);
-				Instantiate(barrielsPrefab[whatPosition], position, Quaternion.identity);
+				Instantiate(barrielsPrefab[whatIndex], position, Quaternion.identity);
 
 			} else if (proximo == TipoOBjeto.InimigoAr) {
 
-				int whatPosition = Random.Range (0, airEnemiesPrefab.Length - 1);
+				int whatIndex = Random.Range (0, airEnemiesPrefab.Length);
 
 				float yInitial = Random.Range (minYAirEnemy, maxYAirEnemy);
 				Vector2 position = new Vector2 (spawnX, yInitial);
-				Instantiate(airEnemiesPrefab[whatPosition], position, Quaternion.identity);
+				Instantiate(airEnemiesPrefab[whatIndex], position, Quaternion.identity);
 
 			} else {
-				//TODO spawnar itens aqui
+
+				int whatIndex = Random.Range (0, itemsPrefab.Length);
+
+				float yInitial = Random.Range (minYItem, maxYItem);
+				Vector2 position = new Vector2 (spawnX, yInitial);
+				Instantiate(itemsPrefab[whatIndex], position, Quaternion.identity);
+
 			}
 		
 			NextTime ();
@@ -68,13 +77,14 @@ public class ObstaclesPooling : MonoBehaviour {
 
 	TipoOBjeto whatIsNext () 
 	{
-		int index = Random.Range (0, 2);
-		if (index == 0)
+		int index = Random.Range (0, 3);
+		if (index == 0) 
 			return TipoOBjeto.Obstaculo;
-		else if (index == 1)
+
+		if (index == 1) 
 			return TipoOBjeto.InimigoAr;
-		else
-			return TipoOBjeto.Item;
+		
+		return TipoOBjeto.Item;
 	}
 	
 }
