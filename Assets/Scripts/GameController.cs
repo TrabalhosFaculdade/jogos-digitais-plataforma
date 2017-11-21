@@ -56,7 +56,6 @@ public class GameController : MonoBehaviour {
 
 	public void PlayerDied()
 	{
-		print ("Player Died");
 		gameOver = true;
 		scrollSpeed = 0f;
 
