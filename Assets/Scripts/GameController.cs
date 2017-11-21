@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour {
 	private int limitScoreCounter = 10;
 
 	public Text scoreText;
+	public GameObject gameOverText;
 	private int score = 0;
 
 	void Awake()
@@ -38,7 +39,7 @@ public class GameController : MonoBehaviour {
 
 		//fim de jogo e alguma tecla pressioanda
 		//resetando cena
-		if (gameOver && Input.GetKeyDown(KeyCode.Space)) 
+		if (gameOver && Input.anyKey) 
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 		
 	}
@@ -55,9 +56,10 @@ public class GameController : MonoBehaviour {
 
 	public void PlayerDied()
 	{
-		print ("Player Died");
 		gameOver = true;
 		scrollSpeed = 0f;
+
+		gameOverText.SetActive (true);
 	}
 
 	public void AddToScore(int value)
