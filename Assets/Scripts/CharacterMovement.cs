@@ -10,8 +10,11 @@ public class CharacterMovement : MonoBehaviour {
 
 	private bool isGrounded, hasDoubleJump;
 
+	private Animator anim;
+
 	void Start () 
 	{
+		anim = GetComponent<Animator> ();
 		rb = GetComponent<Rigidbody2D> ();
 		isGrounded = true;
 		hasDoubleJump = true;
@@ -29,6 +32,9 @@ public class CharacterMovement : MonoBehaviour {
 			}
 
 		}
+
+		UpdateAnimatiom ();
+
 	}
 
 	void OnCollisionEnter2D (Collision2D other)
@@ -44,5 +50,12 @@ public class CharacterMovement : MonoBehaviour {
 	{
 		if (other.gameObject.tag == "Floor") 
 			isGrounded = false;
+	}
+
+	//setting values used by animator
+	private void UpdateAnimatiom () 
+	{
+		anim.SetBool ("IsDead", GameController.instance.gameOver);
+		anim.SetBool ("IsGrounded", isGrounded);
 	}
 }
